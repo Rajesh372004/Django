@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>FEEL GOOD COFFEE</h1>
+      
+
+
+
+  {% for coffee in coffee %}
+  <body> 
+      <div class="containercard">
+          <!-- Card -->
+          <div class="card custom-card">
+              <img src="{{coffee.image}}" class="card-img-top" alt="Coffee">
+              <div class="card-body">
+                  <h5 class="card-title">{{ coffee.name }}</h5>
+                  <p class="card-text">Discover the rich, smooth taste of our premium coffee, crafted from the finest beans.</p>
+                  <p class="card-text">${{ coffee.price }}</p>
+                  <a href="{% url 'order_now' %}" class="btn btn-primary">Order Now</a>
+
+              </div>
+          </div>
+      </div>
+
+       <!-- JavaScript -->
+    <script>
+        function orderNow() {
+            alert("Your order has been placed! Thank you for choosing our Coffee Shop.");
+        }
+    </script>
+ 
+  
+    </body>
+
+
+  
+
+
+  {% endfor %} {% endblock%}
